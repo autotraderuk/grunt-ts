@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.tests = void 0;
 var grunt = require('grunt');
 var testHelpers_1 = require("./testHelpers");
 exports.tests = {

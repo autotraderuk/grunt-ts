@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateReferenceFile = void 0;
 var _ = require("lodash");
 var fs = require("fs");
 var grunt = require("grunt");

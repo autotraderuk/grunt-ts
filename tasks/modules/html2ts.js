@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.compileHTML = void 0;
 var _ = require("lodash");
 var fs = require("fs");
 var path = require("path");
@@ -25,7 +26,6 @@ function htmlInternalTemplate(lineEnding) {
         '  export var <%= varname %> = \'<%= content %>\';' + lineEnding +
         '}' + lineEnding;
 }
-;
 function compileHTML(filename, options) {
     grunt.log.verbose.writeln('Compiling HTML: ' + filename);
     var htmlContent = escapeContent(fs.readFileSync(filename).toString());

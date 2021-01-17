@@ -183,7 +183,7 @@ export function getTempFile(prefix?: string, dir: string = '', extension = '.tmp
  */
 export function getFiles(dirPath, exclude?: (filename: string) => boolean): string[] {
     return _getAll(dirPath, exclude, true);
-};
+}
 
 /**
  * Get all directories from a directory and all its subdirectories.
@@ -195,7 +195,7 @@ export function getFiles(dirPath, exclude?: (filename: string) => boolean): stri
  */
 export function getDirs(dirPath, exclude?: (filename: string) => boolean): string[] {
     return _getAll(dirPath, exclude, false);
-};
+}
 
 /**
  * Get all files or directories from a directory and all its subdirectories.

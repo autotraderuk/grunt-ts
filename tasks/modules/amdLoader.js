@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.updateAmdLoader = exports.getReferencesInOrder = void 0;
 var _ = require("lodash");
 var path = require("path");
 var fs = require("fs");

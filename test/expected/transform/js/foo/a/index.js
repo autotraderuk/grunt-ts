@@ -1,5 +1,6 @@
 "use strict";
 exports.__esModule = true;
+exports.A2 = exports.A1 = void 0;
 ///ts:export=a 
 var A1_file = require("./A1"); ///ts:export:generated
 exports.A1 = A1_file; ///ts:export:generated

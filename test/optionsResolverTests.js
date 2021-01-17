@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.tests = void 0;
 var fs = require("fs");
 var path = require("path");
 var or = require("../tasks/modules/optionsResolver");

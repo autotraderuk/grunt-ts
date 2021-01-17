@@ -288,7 +288,7 @@ function resolveAndWarnOnConfigurationIssues(task: ITargetOptions,
           task.files.forEach(item => {
             if (_.isArray(item.dest)) {
               result = true;
-            };
+            }
           });
         }
         return result;

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.isAbsolutePath = exports.prependIfNotStartsWith = exports.shouldPassThrough = exports.shouldCompile = exports.readAndParseJSONFromFileSync = exports.copyFile = exports.asyncSeries = exports.timeIt = exports.enclosePathInQuotesIfRequired = exports.getOrGetFirst = exports.hasValue = exports.firstElementWithValue = exports.getDirs = exports.getFiles = exports.getTempFile = exports.getRandomHex = exports.format = exports.isJavaScriptFile = exports.stripQuotesIfQuoted = exports.quotedRelativePath = exports.possiblyQuotedRelativePath = exports.endsWith = exports.insertArrayAt = exports.findCommonPath = exports.makeRelativePath = exports.newLineParameterAsActual = exports.newLineActualAsParameter = exports.newLineIsRedundantForTsc = exports.eol = exports.grunt = void 0;
 var path = require("path");
 var fs = require("fs");
 var os = require("os");
@@ -140,12 +141,10 @@ function getFiles(dirPath, exclude) {
     return _getAll(dirPath, exclude, true);
 }
 exports.getFiles = getFiles;
-;
 function getDirs(dirPath, exclude) {
     return _getAll(dirPath, exclude, false);
 }
 exports.getDirs = getDirs;
-;
 function _getAll(dirPath, exclude, getFiles) {
     var _checkDirResult = _checkDirPathArgument(dirPath);
     var _checkExcludeResult;

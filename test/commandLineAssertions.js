@@ -2,8 +2,10 @@
 /// <reference path="../defs/tsd.d.ts"/>
 /// <reference path="../tasks/modules/interfaces.d.ts"/>
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.issue_426_3 = exports.issue_426_2 = exports.issue_426_1 = exports.issue_397 = exports.issue_392 = exports.honorGruntfileExcludesWhenParsingTsconfig = exports.files_dirdesttest = exports.new_TypeScript_2_6_final_and_2_7_Features = exports.new_TypeScript_2_4_thru_2_6_Features = exports.new_TypeScript_2_3_Features = exports.new_TypeScript_2_and_2_1_Features = exports.new_TypeScript_2_0_Features = exports.new_TypeScript_1_8_Features = exports.test_directoriesWithSpaces = exports.test_rootDir = exports.test_experimentalAsyncFunctions = exports.test_moduleResolution = exports.test_jsx = exports.warnbothcomments = exports.files_testWarnIfFilesHasDestArray = exports.files_showWarningIfFilesIsUsedWithFast = exports.files_showWarningIfFilesIsUsedWithVs = exports.files_showWarningIfFilesIsUsedWithSrcOrOutDir = exports.files_showWarningIfFilesIsUsedWithSrcOrOut = exports.out_with_spaces = exports.bad_sourcemap_option = exports.test_additionalFlags = exports.test_noEmitHelpers = exports.test_isolatedModules = exports.test_umd = exports.test_systemJS = exports.files_testFilesUsedWithDestAsAFile = exports.files_testFilesUsedWithDestAsAFolder = exports.param_newLine_LF = exports.param_newLine_CRLF = exports.vsproj_test_config = exports.vsproj_test = exports.inlineSourcesNotPassed = exports.inlineSourceMapPassedWithSourceMap = exports.inlineSourcesAndInlineSourceMapPassed = exports.inlineSourcesPassed = exports.noEmitNotPassed = exports.noEmitPassed = exports.experimentalDecoratorsPassed = exports.variablesReplacedFor_vs = exports.tsconfig_passThrough_onlySendsConfigThrough_WithoutPath = exports.tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional = exports.variablesReplacedForTSConfig = exports.decoratorMetadataNotPassed = exports.decoratorMetadataPassed = void 0;
+exports.test_baseDirNotSpecified = exports.test_baseDirSpecified = exports.test_allowSyntheticDefaultImports = exports.test_stripInternal = exports.test_suppressExcessPropertyErrors = exports.test_locale = exports.test_emitBOM = exports.test_noLib = void 0;
 var es6_promise_1 = require("es6-promise");
-exports.decoratorMetadataPassed = function (strings, options) {
+var decoratorMetadataPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.emitDecoratorMetadata === true &&
             options.experimentalDecorators === true) {
@@ -15,7 +17,8 @@ exports.decoratorMetadataPassed = function (strings, options) {
         throw "expected emitDecoratorMetadata === true and experimentalDecorators === true";
     });
 };
-exports.decoratorMetadataNotPassed = function (strings, options) {
+exports.decoratorMetadataPassed = decoratorMetadataPassed;
+var decoratorMetadataNotPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.emitDecoratorMetadata === undefined) {
             resolve({
@@ -26,7 +29,8 @@ exports.decoratorMetadataNotPassed = function (strings, options) {
         throw "expected emitDecoratorMetadata === false, was " + options.emitDecoratorMetadata;
     });
 };
-exports.variablesReplacedForTSConfig = function (strings, options) {
+exports.decoratorMetadataNotPassed = decoratorMetadataNotPassed;
+var variablesReplacedForTSConfig = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var expected = "test/tsconfig/tsconfig-grunt-ts.json";
         if (options.tsconfig && options.tsconfig.tsconfig === expected) {
@@ -38,7 +42,8 @@ exports.variablesReplacedForTSConfig = function (strings, options) {
         throw "expected tsconfig file === " + expected + ", was " + options.tsconfig.tsconfig;
     });
 };
-exports.tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional = function (strings, options) {
+exports.variablesReplacedForTSConfig = variablesReplacedForTSConfig;
+var tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var tscfg = options.tsconfig;
         if (tscfg
@@ -53,7 +58,8 @@ exports.tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional = func
         throw "expected --project .  The tsconfig was " + JSON.stringify(tscfg) + ".  AddlFlags was " + options.additionalFlags;
     });
 };
-exports.tsconfig_passThrough_onlySendsConfigThrough_WithoutPath = function (strings, options) {
+exports.tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional = tsconfig_passThrough_onlySendsConfigThrough_WithPathAndAdditional;
+var tsconfig_passThrough_onlySendsConfigThrough_WithoutPath = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var tscfg = options.tsconfig;
         if (tscfg && tscfg.passThrough && tscfg.tsconfig === '.') {
@@ -65,7 +71,8 @@ exports.tsconfig_passThrough_onlySendsConfigThrough_WithoutPath = function (stri
         throw "expected --project .  The tsconfig was " + JSON.stringify(tscfg);
     });
 };
-exports.variablesReplacedFor_vs = function (strings, options) {
+exports.tsconfig_passThrough_onlySendsConfigThrough_WithoutPath = tsconfig_passThrough_onlySendsConfigThrough_WithoutPath;
+var variablesReplacedFor_vs = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var expected = "test/vsproj/testproject.csproj";
         if (options.vs && options.vs.project === expected) {
@@ -77,7 +84,8 @@ exports.variablesReplacedFor_vs = function (strings, options) {
         throw "expected vs project file === " + expected + ", was " + options.vs.project;
     });
 };
-exports.experimentalDecoratorsPassed = function (strings, options) {
+exports.variablesReplacedFor_vs = variablesReplacedFor_vs;
+var experimentalDecoratorsPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.experimentalDecorators === true) {
             resolve({
@@ -88,7 +96,8 @@ exports.experimentalDecoratorsPassed = function (strings, options) {
         throw "expected experimentalDecorators === true";
     });
 };
-exports.noEmitPassed = function (strings, options) {
+exports.experimentalDecoratorsPassed = experimentalDecoratorsPassed;
+var noEmitPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.noEmit === true) {
             resolve({
@@ -99,7 +108,8 @@ exports.noEmitPassed = function (strings, options) {
         throw "expected noEmit === true";
     });
 };
-exports.noEmitNotPassed = function (strings, options) {
+exports.noEmitPassed = noEmitPassed;
+var noEmitNotPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.noEmit === undefined) {
             resolve({
@@ -110,7 +120,8 @@ exports.noEmitNotPassed = function (strings, options) {
         throw "expected noEmit === false, was " + options.noEmit;
     });
 };
-exports.inlineSourcesPassed = function (strings, options) {
+exports.noEmitNotPassed = noEmitNotPassed;
+var inlineSourcesPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.inlineSources === true &&
             options.sourceMap === false &&
@@ -128,7 +139,8 @@ exports.inlineSourcesPassed = function (strings, options) {
         throw "expected inlineSources and inlineSourceMap, but not sourceMap.  Got " + result;
     });
 };
-exports.inlineSourcesAndInlineSourceMapPassed = function (strings, options) {
+exports.inlineSourcesPassed = inlineSourcesPassed;
+var inlineSourcesAndInlineSourceMapPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.inlineSources === true &&
             options.sourceMap === false &&
@@ -146,7 +158,8 @@ exports.inlineSourcesAndInlineSourceMapPassed = function (strings, options) {
         throw "expected inlineSources and inlineSourceMap, but not sourceMap.  Got " + result;
     });
 };
-exports.inlineSourceMapPassedWithSourceMap = function (strings, options) {
+exports.inlineSourcesAndInlineSourceMapPassed = inlineSourcesAndInlineSourceMapPassed;
+var inlineSourceMapPassedWithSourceMap = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.inlineSources === undefined &&
             options.sourceMap === false &&
@@ -164,7 +177,8 @@ exports.inlineSourceMapPassedWithSourceMap = function (strings, options) {
         throw "expected inlineSourceMap only.  Got " + result;
     });
 };
-exports.inlineSourcesNotPassed = function (strings, options) {
+exports.inlineSourceMapPassedWithSourceMap = inlineSourceMapPassedWithSourceMap;
+var inlineSourcesNotPassed = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.inlineSources === undefined && options.sourceMap === false) {
             resolve({
@@ -180,7 +194,8 @@ exports.inlineSourcesNotPassed = function (strings, options) {
         throw "expected inlineSourcesPassed === undefined and sourceMap false.  Got " + result;
     });
 };
-exports.vsproj_test = function (strings, options) {
+exports.inlineSourcesNotPassed = inlineSourcesNotPassed;
+var vsproj_test = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.sourceMap === true &&
             options.removeComments === false &&
@@ -198,7 +213,8 @@ exports.vsproj_test = function (strings, options) {
                 options.removeComments, options.module, options.CompilationTasks[0].outDir, options.strictNullChecks]);
     });
 };
-exports.vsproj_test_config = function (strings, options) {
+exports.vsproj_test = vsproj_test;
+var vsproj_test_config = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.sourceMap === false &&
             options.removeComments === true &&
@@ -214,7 +230,8 @@ exports.vsproj_test_config = function (strings, options) {
                 options.removeComments, options.CompilationTasks[0].outDir]);
     });
 };
-exports.param_newLine_CRLF = function (strings, options) {
+exports.vsproj_test_config = vsproj_test_config;
+var param_newLine_CRLF = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.newLine === "CRLF") {
             resolve({
@@ -226,7 +243,8 @@ exports.param_newLine_CRLF = function (strings, options) {
             JSON.stringify([options.newLine]);
     });
 };
-exports.param_newLine_LF = function (strings, options) {
+exports.param_newLine_CRLF = param_newLine_CRLF;
+var param_newLine_LF = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.newLine === "LF") {
             resolve({
@@ -238,7 +256,8 @@ exports.param_newLine_LF = function (strings, options) {
             JSON.stringify([options.newLine]);
     });
 };
-exports.files_testFilesUsedWithDestAsAFolder = function (strings, options) {
+exports.param_newLine_LF = param_newLine_LF;
+var files_testFilesUsedWithDestAsAFolder = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.CompilationTasks[0].outDir === "test/multifile/files_testFilesUsedWithDestAsAJSFolder" &&
             (options.CompilationTasks[0].out || "not specified") === "not specified") {
@@ -251,7 +270,8 @@ exports.files_testFilesUsedWithDestAsAFolder = function (strings, options) {
             JSON.stringify([options.CompilationTasks[0].outDir]);
     });
 };
-exports.files_testFilesUsedWithDestAsAFile = function (strings, options) {
+exports.files_testFilesUsedWithDestAsAFolder = files_testFilesUsedWithDestAsAFolder;
+var files_testFilesUsedWithDestAsAFile = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.CompilationTasks[0].out === "test/multifile/files_testFilesUsedWithDestAsAJSFile/testDest.js" &&
             (options.CompilationTasks[0].outDir || "not specified") === "not specified") {
@@ -264,7 +284,8 @@ exports.files_testFilesUsedWithDestAsAFile = function (strings, options) {
             JSON.stringify([options.CompilationTasks[0].outDir]);
     });
 };
-exports.test_systemJS = function (strings, options) {
+exports.files_testFilesUsedWithDestAsAFile = files_testFilesUsedWithDestAsAFile;
+var test_systemJS = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.module === "system") {
             resolve({
@@ -276,7 +297,8 @@ exports.test_systemJS = function (strings, options) {
             JSON.stringify([options.module]);
     });
 };
-exports.test_umd = function (strings, options) {
+exports.test_systemJS = test_systemJS;
+var test_umd = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.module === "umd") {
             resolve({
@@ -288,7 +310,8 @@ exports.test_umd = function (strings, options) {
             JSON.stringify([options.module]);
     });
 };
-exports.test_isolatedModules = function (strings, options) {
+exports.test_umd = test_umd;
+var test_isolatedModules = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.isolatedModules === true) {
             resolve({
@@ -299,7 +322,8 @@ exports.test_isolatedModules = function (strings, options) {
         throw "expected --isolatedModules.  Got " + JSON.stringify(options);
     });
 };
-exports.test_noEmitHelpers = function (strings, options) {
+exports.test_isolatedModules = test_isolatedModules;
+var test_noEmitHelpers = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.noEmitHelpers === true) {
             resolve({
@@ -310,7 +334,8 @@ exports.test_noEmitHelpers = function (strings, options) {
         throw "expected --noEmitHelpers.  Got " + JSON.stringify(options);
     });
 };
-exports.test_additionalFlags = function (strings, options) {
+exports.test_noEmitHelpers = test_noEmitHelpers;
+var test_additionalFlags = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.additionalFlags === '--version') {
             resolve({
@@ -321,7 +346,8 @@ exports.test_additionalFlags = function (strings, options) {
         throw "expected --version.  Got " + JSON.stringify(options);
     });
 };
-exports.bad_sourcemap_option = function (strings, options) {
+exports.test_additionalFlags = test_additionalFlags;
+var bad_sourcemap_option = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         if (options.warnings.length > 0
             && options.warnings[0].indexOf("sourceMap") > -1) {
@@ -333,7 +359,8 @@ exports.bad_sourcemap_option = function (strings, options) {
         throw "expected to see a warning for bad sourceMap option.";
     });
 };
-exports.out_with_spaces = function (strings, options) {
+exports.bad_sourcemap_option = bad_sourcemap_option;
+var out_with_spaces = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1];
         if (command.indexOf('--out "test/out with spaces/out with spaces.js"') > -1) {
@@ -345,7 +372,8 @@ exports.out_with_spaces = function (strings, options) {
         throw "expected to see relative path to out with spaces.js surrounded in quotes.";
     });
 };
-exports.files_showWarningIfFilesIsUsedWithSrcOrOut = function (strings, options) {
+exports.out_with_spaces = out_with_spaces;
+var files_showWarningIfFilesIsUsedWithSrcOrOut = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "Warning: In task \"files_showWarningIfFilesIsUsedWithSrcOrOut\", either" +
@@ -365,7 +393,8 @@ exports.files_showWarningIfFilesIsUsedWithSrcOrOut = function (strings, options)
             "a warning about using src with files.";
     });
 };
-exports.files_showWarningIfFilesIsUsedWithSrcOrOutDir = function (strings, options) {
+exports.files_showWarningIfFilesIsUsedWithSrcOrOut = files_showWarningIfFilesIsUsedWithSrcOrOut;
+var files_showWarningIfFilesIsUsedWithSrcOrOutDir = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "Warning: In task \"files_showWarningIfFilesIsUsedWithSrcOrOutDir\", either" +
@@ -385,7 +414,8 @@ exports.files_showWarningIfFilesIsUsedWithSrcOrOutDir = function (strings, optio
             "a warning about using src with files.";
     });
 };
-exports.files_showWarningIfFilesIsUsedWithVs = function (strings, options) {
+exports.files_showWarningIfFilesIsUsedWithSrcOrOutDir = files_showWarningIfFilesIsUsedWithSrcOrOutDir;
+var files_showWarningIfFilesIsUsedWithVs = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "Warning: In task \"files_showWarningIfFilesIsUsedWithVs\", either \"files\" " +
@@ -406,7 +436,8 @@ exports.files_showWarningIfFilesIsUsedWithVs = function (strings, options) {
             "a warning about using vs with files.";
     });
 };
-exports.files_showWarningIfFilesIsUsedWithFast = function (strings, options) {
+exports.files_showWarningIfFilesIsUsedWithVs = files_showWarningIfFilesIsUsedWithVs;
+var files_showWarningIfFilesIsUsedWithFast = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "Warning: target \"files_showWarningIfFilesIsUsedWithFast\" is attempting to use fast compilation with \"files\"." +
@@ -424,7 +455,8 @@ exports.files_showWarningIfFilesIsUsedWithFast = function (strings, options) {
         throw "expected to see TypeScript files in multifile/a and a warning about using src with files.";
     });
 };
-exports.files_testWarnIfFilesHasDestArray = function (strings, options) {
+exports.files_showWarningIfFilesIsUsedWithFast = files_showWarningIfFilesIsUsedWithFast;
+var files_testWarnIfFilesHasDestArray = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "Warning: target \"files_testWarnIfFilesHasDestArray\" has an array specified for the files.dest property." +
@@ -444,7 +476,8 @@ exports.files_testWarnIfFilesHasDestArray = function (strings, options) {
             "There should be no commas in the command line (which would indicate the array was passed as an array).";
     });
 };
-exports.warnbothcomments = function (strings, options) {
+exports.files_testWarnIfFilesHasDestArray = files_testWarnIfFilesHasDestArray;
+var warnbothcomments = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expectedWarning = "WARNING: Option \"comments\" and \"removeComments\" should not be used together.  " +
@@ -461,7 +494,8 @@ exports.warnbothcomments = function (strings, options) {
         throw "expected to not see removeComments passed.";
     });
 };
-exports.test_jsx = function (strings, options) {
+exports.warnbothcomments = warnbothcomments;
+var test_jsx = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expected = '--jsx preserve';
@@ -474,7 +508,8 @@ exports.test_jsx = function (strings, options) {
         throw "expected to see " + expected + " in the command line and didn't.  Got this: " + command;
     });
 };
-exports.test_moduleResolution = function (strings, options) {
+exports.test_jsx = test_jsx;
+var test_moduleResolution = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expected = '--moduleResolution classic';
@@ -487,7 +522,8 @@ exports.test_moduleResolution = function (strings, options) {
         throw "expected to see " + expected + " in the command line and didn't.  Got this: " + command;
     });
 };
-exports.test_experimentalAsyncFunctions = function (strings, options) {
+exports.test_moduleResolution = test_moduleResolution;
+var test_experimentalAsyncFunctions = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expected = '--experimentalAsyncFunctions';
@@ -500,7 +536,8 @@ exports.test_experimentalAsyncFunctions = function (strings, options) {
         throw "expected to see " + expected + " in the command line and didn't.  Got this: " + command;
     });
 };
-exports.test_rootDir = function (strings, options) {
+exports.test_experimentalAsyncFunctions = test_experimentalAsyncFunctions;
+var test_rootDir = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         var expected = '--rootDir test/simple';
@@ -513,7 +550,8 @@ exports.test_rootDir = function (strings, options) {
         throw "expected to see " + expected + " in the command line and didn't.  Got this: " + command;
     });
 };
-exports.test_directoriesWithSpaces = function (strings, options) {
+exports.test_rootDir = test_rootDir;
+var test_directoriesWithSpaces = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--rootDir \"test/rootDir with spaces\"") > -1 &&
@@ -528,7 +566,8 @@ exports.test_directoriesWithSpaces = function (strings, options) {
         throw "expected to see rootDir, outDir, sourceRoot, and mapRoot with quoted values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_1_8_Features = function (strings, options) {
+exports.test_directoriesWithSpaces = test_directoriesWithSpaces;
+var new_TypeScript_1_8_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--reactNamespace myReact") > -1 &&
@@ -549,7 +588,8 @@ exports.new_TypeScript_1_8_Features = function (strings, options) {
         throw "expected to see all of the new TypeScript 1.8 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_2_0_Features = function (strings, options) {
+exports.new_TypeScript_1_8_Features = new_TypeScript_1_8_Features;
+var new_TypeScript_2_0_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--strictNullChecks") > -1 &&
@@ -563,7 +603,8 @@ exports.new_TypeScript_2_0_Features = function (strings, options) {
         throw "expected to see all of the new TypeScript 2.0 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_2_and_2_1_Features = function (strings, options) {
+exports.new_TypeScript_2_0_Features = new_TypeScript_2_0_Features;
+var new_TypeScript_2_and_2_1_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--alwaysStrict") > -1 &&
@@ -593,7 +634,8 @@ exports.new_TypeScript_2_and_2_1_Features = function (strings, options) {
         throw "expected to see all of the new TypeScript 2 and 2.1 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_2_3_Features = function (strings, options) {
+exports.new_TypeScript_2_and_2_1_Features = new_TypeScript_2_and_2_1_Features;
+var new_TypeScript_2_3_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--strict") > -1 &&
@@ -608,7 +650,8 @@ exports.new_TypeScript_2_3_Features = function (strings, options) {
         throw "expected to see all of the new TypeScript 2 and 2.1 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_2_4_thru_2_6_Features = function (strings, options) {
+exports.new_TypeScript_2_3_Features = new_TypeScript_2_3_Features;
+var new_TypeScript_2_4_thru_2_6_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--noStrictGenericChecks") > -1 &&
@@ -623,7 +666,8 @@ exports.new_TypeScript_2_4_thru_2_6_Features = function (strings, options) {
         throw "expected to see all of the new TypeScript 2.4/2.5/2.6 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.new_TypeScript_2_6_final_and_2_7_Features = function (strings, options) {
+exports.new_TypeScript_2_4_thru_2_6_Features = new_TypeScript_2_4_thru_2_6_Features;
+var new_TypeScript_2_6_final_and_2_7_Features = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--esModuleInterop") > -1 &&
@@ -637,7 +681,8 @@ exports.new_TypeScript_2_6_final_and_2_7_Features = function (strings, options) 
         throw "expected to see all of the new TypeScript 2.6 and 2.7 values in the command line and didn't.  Got this: " + command;
     });
 };
-exports.files_dirdesttest = function (strings, options) {
+exports.new_TypeScript_2_6_final_and_2_7_Features = new_TypeScript_2_6_final_and_2_7_Features;
+var files_dirdesttest = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--outDir test/multifile/a/") > -1 &&
@@ -652,7 +697,8 @@ exports.files_dirdesttest = function (strings, options) {
         throw "expected to see three files under test/multifile/a and the --outDir switch, but didn't.  Got this: " + command;
     });
 };
-exports.honorGruntfileExcludesWhenParsingTsconfig = function (strings, options) {
+exports.files_dirdesttest = files_dirdesttest;
+var honorGruntfileExcludesWhenParsingTsconfig = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf(".spec.ts") === -1) {
@@ -664,7 +710,8 @@ exports.honorGruntfileExcludesWhenParsingTsconfig = function (strings, options) 
         throw "expected to not see .spec.ts files included (which are excluded from the glob in the Gruntfile).  Got this: " + command;
     });
 };
-exports.issue_392 = function (strings, options) {
+exports.honorGruntfileExcludesWhenParsingTsconfig = honorGruntfileExcludesWhenParsingTsconfig;
+var issue_392 = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("node_modules") === -1) {
@@ -676,7 +723,8 @@ exports.issue_392 = function (strings, options) {
         throw "expected to see node_modules excluded and didn't (See GitHub issue 392).  Got this: " + command;
     });
 };
-exports.issue_397 = function (strings, options) {
+exports.issue_392 = issue_392;
+var issue_397 = function (strings, options) {
     return new es6_promise_1.Promise(function (resolve, reject) {
         var command = strings[1].replace(/\\/g, '/');
         if (command.indexOf("--typeRoots \"test/issue_397/src/typings,test/issue_397/src/other_typings\"") !== -1) {
@@ -688,6 +736,7 @@ exports.issue_397 = function (strings, options) {
         throw "expected to see typeRoots files to be relative (See GitHub issue 397).  Got this: " + command;
     });
 };
+exports.issue_397 = issue_397;
 exports.issue_426_1 = simpleCommandLineCheck("--baseUrl .");
 exports.issue_426_2 = simpleCommandLineCheck("--baseUrl ./");
 exports.issue_426_3 = simpleCommandLineCheck("--baseUrl ./app");

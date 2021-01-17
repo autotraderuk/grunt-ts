@@ -354,7 +354,7 @@ function applyCompilerOptions(applyTo: Partial<IGruntTSOptions>, projectSpec: IT
     // when inside the tsconfig.json the `typeRoots` paths needs to be move relative to gruntfile
     if (('typeRoots' in co) && !('typeRoots' in result)) {
       const relPath = relativePathFromGruntfileToTSConfig();
-      result['typeRoots'] = _.map(co['typeRoots'], p => { return path.relative('.', path.resolve(relPath, p)).replace(/\\/g, '/'); });
+      result!['typeRoots'] = _.map(co['typeRoots'], p => { return path.relative('.', path.resolve(relPath, p)).replace(/\\/g, '/'); });
     }
   }
 

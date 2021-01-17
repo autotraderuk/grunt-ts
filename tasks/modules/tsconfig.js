@@ -1,5 +1,13 @@
 'use strict';
+var __spreadArrays = (this && this.__spreadArrays) || function () {
+    for (var s = 0, i = 0, il = arguments.length; i < il; i++) s += arguments[i].length;
+    for (var r = Array(s), k = 0, i = 0; i < il; i++)
+        for (var a = arguments[i], j = 0, jl = a.length; j < jl; j++, k++)
+            r[k] = a[j];
+    return r;
+};
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.prettyJSON = exports.resolveAsync = void 0;
 var es6_promise_1 = require("es6-promise");
 var fs = require("fs");
 var path = require("path");
@@ -154,7 +162,7 @@ function getGlobs(taskOptions, targetOptions) {
         return (_.isArray(thing) || _.isString(thing));
     }
     function getFlatCloneOf(array) {
-        return _.flattenDeep(array).slice();
+        return __spreadArrays(_.flattenDeep(array));
     }
 }
 function resolve_output_locations(options, projectSpec) {
@@ -382,7 +390,7 @@ function addFilesToCompilationContext(applyTo, projectSpec) {
         if (globExpander.isStub) {
             result.warnings.push('Attempt to resolve glob in tsconfig module using stub globExpander.');
         }
-        var globsToResolve = resolvedInclude.concat(resolvedExclude, resolvedExcludeFromGruntfile);
+        var globsToResolve = __spreadArrays(resolvedInclude, resolvedExclude, resolvedExcludeFromGruntfile);
         expandedCompilationContext.push.apply(expandedCompilationContext, (globExpander(globsToResolve).filter(function (p) {
             if (_.endsWith(p, '.ts') || _.endsWith(p, '.tsx')) {
                 return true;
@@ -393,7 +401,7 @@ function addFilesToCompilationContext(applyTo, projectSpec) {
             return false;
         })));
     }
-    var tsconfigCompilationContext = expandedCompilationContext.concat(resolvedFiles);
+    var tsconfigCompilationContext = __spreadArrays(expandedCompilationContext, resolvedFiles);
     verboseLogger('Will resolve tsconfig compilation context from: ' + JSON.stringify(tsconfigCompilationContext));
     addUniqueRelativeFilesToSrc(tsconfigCompilationContext, src, absolutePathToTSConfig);
     if (tsconfig.updateFiles && projectSpec.filesGlob) {

@@ -1,5 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.GruntTSDefaults = void 0;
 var utils = require("./utils");
 var _ = require("lodash");
 var TypeScriptDefaults = {

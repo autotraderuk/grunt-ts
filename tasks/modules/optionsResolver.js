@@ -1,5 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.resolveAsync = void 0;
 var defaults_1 = require("./defaults");
 var utils = require("./utils");
 var _ = require("lodash");
@@ -240,7 +241,6 @@ function resolveAndWarnOnConfigurationIssues(task, target, targetName) {
                     if (_.isArray(item.dest)) {
                         result = true;
                     }
-                    ;
                 });
             }
             return result;

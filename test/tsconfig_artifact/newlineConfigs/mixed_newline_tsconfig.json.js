@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.mixed_newline_tsconfig_json = void 0;
 exports.mixed_newline_tsconfig_json = '{\r\n' +
     '    "version": "1.5.3",\r\n' +
     '    "compilerOptions": {\r\n' +

@@ -1,5 +1,6 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.compileAllFiles = exports.compileResultMeansFastCacheShouldBeRefreshed = exports.grunt = void 0;
 var path = require("path");
 var fs = require("fs");
 var _ = require("lodash");

@@ -25,8 +25,8 @@ var escapeContent = function (content: string, quoteChar= '\''): string {
 // Convert a string to camelCase
 // Inspired by http://jamesroberts.name/blog/2010/02/22/string-functions-for-javascript-trim-to-camel-case-to-dashed-and-to-underscore/
 // Solves the issue of serving a module name that includes dashes
-var toCamel = function(str){
-    return str.replace(/(\-[a-z])/g, function($1){return $1.toUpperCase().replace('-', ''); });
+var toCamel = function(str) {
+    return str.replace(/(\-[a-z])/g, function($1) {return $1.toUpperCase().replace('-', ''); });
 };
 
 // Remove bom when reading utf8 files
@@ -42,7 +42,7 @@ function htmlInternalTemplate(lineEnding: string) {
     'module <%= modulename %> {' + lineEnding +
     '  export var <%= varname %> = \'<%= content %>\';' + lineEnding +
     '}' + lineEnding;
-  };
+  }
 
 
 export interface IHtml2TSOptions {
