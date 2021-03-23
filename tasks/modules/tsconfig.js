@@ -8,15 +8,15 @@ var __spreadArrays = (this && this.__spreadArrays) || function () {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.prettyJSON = exports.resolveAsync = void 0;
-var es6_promise_1 = require("es6-promise");
-var fs = require("fs");
-var path = require("path");
-var stripBom = require("strip-bom");
-var _ = require("lodash");
 var detectIndent = require("detect-indent");
 var detectNewline = require("detect-newline");
-var utils = require("./utils");
+var es6_promise_1 = require("es6-promise");
+var fs = require("fs");
 var jsmin = require("jsmin2");
+var _ = require("lodash");
+var path = require("path");
+var stripBom = require("strip-bom");
+var utils = require("./utils");
 var templateProcessor = null;
 var globExpander = null;
 var gruntfileGlobs = null;
@@ -292,6 +292,7 @@ function applyCompilerOptions(applyTo, projectSpec) {
             'strictFunctionTypes',
             'strictNullChecks',
             'strictPropertyInitialization',
+            'strictBindCallApply',
             'stripInternal',
             'suppressExcessPropertyIndexErrors',
             'suppressImplicitAnyIndexErrors',

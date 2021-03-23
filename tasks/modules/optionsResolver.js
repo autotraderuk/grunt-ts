@@ -1,12 +1,12 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolveAsync = void 0;
-var defaults_1 = require("./defaults");
-var utils = require("./utils");
-var _ = require("lodash");
 var es6_promise_1 = require("es6-promise");
-var visualStudioOptionsResolver_1 = require("./visualStudioOptionsResolver");
+var _ = require("lodash");
+var defaults_1 = require("./defaults");
 var tsconfig_1 = require("./tsconfig");
+var utils = require("./utils");
+var visualStudioOptionsResolver_1 = require("./visualStudioOptionsResolver");
 var propertiesFromTarget = ['amdloader', 'baseDir', 'html', 'htmlOutDir', 'htmlOutDirFlatten', 'reference', 'testExecute', 'tsconfig',
     'templateCache', 'vs', 'watch'], propertiesFromTargetOptions = ['additionalFlags',
     'allowJs',
@@ -82,6 +82,7 @@ var propertiesFromTarget = ['amdloader', 'baseDir', 'html', 'htmlOutDir', 'htmlO
     'strictFunctionTypes',
     'strictNullChecks',
     'strictPropertyInitialization',
+    'strictBindCallApply',
     'stripInternal',
     'suppressExcessPropertyErrors',
     'suppressImplicitAnyIndexErrors',

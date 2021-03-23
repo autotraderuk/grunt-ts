@@ -3,14 +3,14 @@
 
 'use strict';
 
-import * as path from 'path';
+import { Promise } from 'es6-promise';
 import * as fs from 'fs';
 import * as _ from 'lodash';
-import * as utils from './utils';
-import * as cache from './cacheUtils';
+import * as path from 'path';
 import * as semver from 'semver';
+import * as cache from './cacheUtils';
+import * as utils from './utils';
 
-import {Promise} from 'es6-promise';
 
 export var grunt: IGrunt = require('grunt');
 
@@ -367,6 +367,9 @@ export function compileAllFiles(options: Partial<IGruntTSOptions>, compilationIn
       }
       if (options.strictPropertyInitialization) {
           args.push('--strictPropertyInitialization');
+      }
+      if (options.strictBindCallApply) {
+        args.push('--strictBindCallApply');
       }
       if (options.strictNullChecks) {
           args.push('--strictNullChecks');

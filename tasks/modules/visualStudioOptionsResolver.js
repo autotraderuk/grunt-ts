@@ -2,10 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.resolveVSOptionsAsync = void 0;
 var csproj2ts = require("csproj2ts");
-var path = require("path");
-var utils = require("./utils");
 var es6_promise_1 = require("es6-promise");
 var _ = require("lodash");
+var path = require("path");
+var utils = require("./utils");
 var templateProcessor = null;
 function resolveVSOptionsAsync(applyTo, taskOptions, targetOptions, theTemplateProcessor) {
     templateProcessor = theTemplateProcessor;
@@ -163,6 +163,7 @@ function applyVSSettings(options, vsSettings) {
         'StrictFunctionTypes': 'strictFunctionTypes',
         'StrictNullChecks': 'strictNullChecks',
         'StrictPropertyInitialization': 'strictPropertyInitialization',
+        'StrictBindCallApply': 'strictBindCallApply',
         'SuppressExcessPropertyErrors': 'suppressExcessPropertyErrors',
         'SuppressImplicitAnyIndexErrors': 'suppressImplicitAnyIndexErrors',
         'Target': 'target'

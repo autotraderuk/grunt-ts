@@ -165,6 +165,8 @@ interface ITaskOptions {
     strictNullChecks: boolean;
     /** Ensures each instance property is initialized before use */
     strictPropertyInitialization: boolean;
+    /** Ensures that .bind() correctly returns the type */
+    strictBindCallApply: boolean;
     /** Does not emit objects marked @internal in jsdoc */
     stripInternal: boolean;
     /** Disables strict object literal assignment checking */

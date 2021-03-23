@@ -1,10 +1,10 @@
 'use strict';
 
 import * as csproj2ts from 'csproj2ts';
+import { Promise } from 'es6-promise';
+import * as _ from 'lodash';
 import * as path from 'path';
 import * as utils from './utils';
-import {Promise} from 'es6-promise';
-import * as _ from 'lodash';
 
 let templateProcessor: (templateString: string, options: any) => string = null;
 
@@ -189,6 +189,7 @@ function applyVSSettings(options: Partial<IGruntTSOptions>, vsSettings: csproj2t
     'StrictFunctionTypes': 'strictFunctionTypes',
     'StrictNullChecks': 'strictNullChecks',
     'StrictPropertyInitialization': 'strictPropertyInitialization',
+    'StrictBindCallApply': 'strictBindCallApply',
     'SuppressExcessPropertyErrors': 'suppressExcessPropertyErrors',
     'SuppressImplicitAnyIndexErrors': 'suppressImplicitAnyIndexErrors',
     'Target': 'target'

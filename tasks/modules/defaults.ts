@@ -1,7 +1,7 @@
 'use strict';
 
-import * as utils from './utils';
 import * as _ from 'lodash';
+import * as utils from './utils';
 
 const TypeScriptDefaults: IGruntTSOptions = {
     additionalFlags: '',
@@ -83,6 +83,7 @@ const TypeScriptDefaults: IGruntTSOptions = {
     strictFunctionTypes: false,
     strictNullChecks: false,
     strictPropertyInitialization: false,
+    strictBindCallApply: false,
     stripInternal: false,
     suppressExcessPropertyErrors: false,
     suppressImplicitAnyIndexErrors: false,

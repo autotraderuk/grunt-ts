@@ -1,13 +1,13 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.compileAllFiles = exports.compileResultMeansFastCacheShouldBeRefreshed = exports.grunt = void 0;
-var path = require("path");
+var es6_promise_1 = require("es6-promise");
 var fs = require("fs");
 var _ = require("lodash");
-var utils = require("./utils");
-var cache = require("./cacheUtils");
+var path = require("path");
 var semver = require("semver");
-var es6_promise_1 = require("es6-promise");
+var cache = require("./cacheUtils");
+var utils = require("./utils");
 exports.grunt = require('grunt');
 var executeNode;
 var executeNodeDefault = function (args, optionalInfo) {
@@ -297,6 +297,9 @@ function compileAllFiles(options, compilationInfo) {
         }
         if (options.strictPropertyInitialization) {
             args.push('--strictPropertyInitialization');
+        }
+        if (options.strictBindCallApply) {
+            args.push('--strictBindCallApply');
         }
         if (options.strictNullChecks) {
             args.push('--strictNullChecks');

@@ -1,8 +1,8 @@
 'use strict';
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GruntTSDefaults = void 0;
-var utils = require("./utils");
 var _ = require("lodash");
+var utils = require("./utils");
 var TypeScriptDefaults = {
     additionalFlags: '',
     allowBool: false,
@@ -83,6 +83,7 @@ var TypeScriptDefaults = {
     strictFunctionTypes: false,
     strictNullChecks: false,
     strictPropertyInitialization: false,
+    strictBindCallApply: false,
     stripInternal: false,
     suppressExcessPropertyErrors: false,
     suppressImplicitAnyIndexErrors: false,

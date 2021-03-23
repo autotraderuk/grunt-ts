@@ -3,12 +3,12 @@
 
 'use strict';
 
-import {GruntTSDefaults} from './defaults';
-import * as utils from './utils';
+import { Promise } from 'es6-promise';
 import * as _ from 'lodash';
-import {Promise} from 'es6-promise';
-import {resolveVSOptionsAsync} from './visualStudioOptionsResolver';
-import {resolveAsync as resolveTSConfigAsync} from './tsconfig';
+import { GruntTSDefaults } from './defaults';
+import { resolveAsync as resolveTSConfigAsync } from './tsconfig';
+import * as utils from './utils';
+import { resolveVSOptionsAsync } from './visualStudioOptionsResolver';
 
 // Compiler Options documentation:
 // https://github.com/Microsoft/TypeScript-Handbook/blob/master/pages/Compiler%20Options.md
@@ -94,6 +94,7 @@ const propertiesFromTarget = ['amdloader', 'baseDir', 'html', 'htmlOutDir', 'htm
         'strictFunctionTypes',
         'strictNullChecks',
         'strictPropertyInitialization',
+        'strictBindCallApply',
         'stripInternal',
         'suppressExcessPropertyErrors',
         'suppressImplicitAnyIndexErrors',

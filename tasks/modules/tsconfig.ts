@@ -1,15 +1,14 @@
 'use strict';
 
-import {Promise} from 'es6-promise';
-import * as fs from 'fs';
-import * as path from 'path';
-import * as stripBom from 'strip-bom';
-import * as _ from 'lodash';
 import * as detectIndent from 'detect-indent';
 import * as detectNewline from 'detect-newline';
-import * as utils from './utils';
-import * as ts from '../ts';
+import { Promise } from 'es6-promise';
+import * as fs from 'fs';
 import * as jsmin from 'jsmin2';
+import * as _ from 'lodash';
+import * as path from 'path';
+import * as stripBom from 'strip-bom';
+import * as utils from './utils';
 
 
 let templateProcessor: (templateString: string, options: any) => string = null;
@@ -327,6 +326,7 @@ function applyCompilerOptions(applyTo: Partial<IGruntTSOptions>, projectSpec: IT
       'strictFunctionTypes',
       'strictNullChecks',
       'strictPropertyInitialization',
+      'strictBindCallApply',
       'stripInternal',
       'suppressExcessPropertyIndexErrors',
       'suppressImplicitAnyIndexErrors',
